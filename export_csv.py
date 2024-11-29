@@ -12,7 +12,7 @@ excel_file_base = f"{folder_path}{current_date}.xlsx"
 
 # 다른 폴더에도 복사
 
-folder_path_copy = "C:/Users/verwa/Desktop/Privat/Export/export_inventory/"
+folder_path_copy = "C:/Users/verwa/Desktop/Privat/export_inventory"
 excel_file_base_copy = f"{folder_path_copy}{current_date}.xlsx"
 
 # 고유 파일 이름 생성
