@@ -10,6 +10,11 @@ folder_path = "J:/Lager/EXPORT Local/"
 csv_file_path = f"{folder_path}{current_date}.csv"
 excel_file_base = f"{folder_path}{current_date}.xlsx"
 
+# 다른 폴더에도 복사
+
+folder_path_copy = "C:/Users/verwa/Desktop/Privat/Export/export_inventory/"
+excel_file_base_copy = f"{folder_path_copy}{current_date}.xlsx"
+
 # 고유 파일 이름 생성
 def generate_unique_filename(base_path):
     """중복되지 않는 파일 이름 생성"""
@@ -24,6 +29,7 @@ def generate_unique_filename(base_path):
 
 # 고유한 Excel 파일 경로 생성
 excel_file_path = generate_unique_filename(excel_file_base)
+excel_file_path_copy = generate_unique_filename(excel_file_base_copy)
 
 # CSV 파일 읽기
 try:
@@ -51,6 +57,9 @@ else:
 # 필터링된 데이터를 Excel로 저장
 try:
     filtered_df.to_excel(excel_file_path, index=False, engine="openpyxl")
-    print(f"필터링된 데이터가 {excel_file_path}에 저장되었습니다.")
+    
+    filtered_df.to_excel(excel_file_path_copy, index=False, engine="openpyxl")
+    print(f"필터링된 데이터가 {excel_file_path}와 {excel_file_path_copy}에 저장되었습니다.")
+
 except Exception as e:
     print(f"Excel 저장 중 오류 발생: {e}")
